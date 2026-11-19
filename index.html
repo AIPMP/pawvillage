@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/pawvillage/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="동물 마을 퍼즐 - 육각 벌집 마을에 동물 7마리를 논리로 배치하는 퍼즐">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="동물 마을 퍼즐">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>동물 마을 퍼즐 (PawVillage)</title>
+  <meta name="theme-color" content="#2E7D32">
+  <style>
+    html, body { margin: 0; height: 100%; background: linear-gradient(#8FD3FF, #D6F1FF 40%, #A5DB7E); }
+    #pv-splash { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-family: sans-serif; color: #1B5E20; }
+    #pv-splash b { font-size: 34px; } #pv-splash span { margin-top: 6px; letter-spacing: 4px; color: #D95F00; font-weight: 700; }
+  </style>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div id="pv-splash"><b>동물 마을 퍼즐</b><span>PAW VILLAGE</span></div>
+  <script>window.addEventListener('flutter-first-frame', function () { var e = document.getElementById('pv-splash'); if (e) e.remove(); });</script>
+  <!--
+    You can customize the "flutter_bootstrap.js" script.
+    This is useful to provide a custom configuration to the Flutter loader
+    or to give the user feedback during the initialization process.
+
+    For more details:
+    * https://docs.flutter.dev/platform-integration/web/initialization
+  -->
+  <!-- 접속 카운터 (통계: VisitStats). GitHub Pages 주소에서 열렸을 때만 센다. -->
+  <script>
+    (function () {
+      try {
+        if (!/\.github\.io$/.test(location.hostname)) return;
+        var APP = 'pawvillage';
+        var today = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+        var isNew = false;
+        try {
+          var k = 'vc_day_' + APP;
+          if (localStorage.getItem(k) !== today) { localStorage.setItem(k, today); isNew = true; }
+        } catch (e) {}
+        var src = /; wv\)/.test(navigator.userAgent) ? 'apk' : 'web';
+        fetch('https://fderhgftwfsbaumlkxxe.supabase.co/rest/v1/rpc/track_visit', {
+          method: 'POST', keepalive: true,
+          headers: { 'apikey': 'sb_publishable_CegmHgYuVKWcXKoV54fiKg_ylq3F2xL', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ p_app: APP, p_src: src, p_new: isNew })
+        }).catch(function () {});
+      } catch (e) {}
+    })();
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+    "name": "동물 마을 퍼즐",
+    "short_name": "동물 마을",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#D6F1FF",
+    "theme_color": "#2E7D32",
+    "description": "육각 벌집 마을에 동물 7마리를 논리로 배치하는 퍼즐",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
